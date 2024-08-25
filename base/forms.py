@@ -8,10 +8,14 @@ class YearInput(forms.DateInput):
     attrs = {'min': '1900', 'max': '2100'} 
 
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput(),required=False)    
+    password = forms.CharField(widget=forms.PasswordInput(), required=False)
+
     class Meta:
         model = User
-        fields = ['first_name','last_name','password', 'email', 'phone', 'gender','address']
+        fields = ['first_name', 'last_name', 'password', 'email', 'phone', 'gender', 'address']
+
+    
+
 
 class ArtistForm(forms.ModelForm):   
     dob = forms.DateField(
@@ -33,6 +37,8 @@ class MusicForm(forms.ModelForm):
     
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(),required=False)    
+    email = forms.EmailField(required=False)
     class Meta:
         model = User
         fields = ['first_name','last_name','password', 'email', 'phone', 'gender','address']
+    

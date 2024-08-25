@@ -68,7 +68,7 @@
                                     <td>{{user.phone}}</td>
                                     <td>{{user.gender}}</td>
                                     <td>{{user.address}}</td>
-                                    <td><a href="{% url 'user-edit' pk=user.id %}"><button type="button" class="btn btn-warning">Edit</button></a> <button type="button" class="btn btn-danger" >Delete</button></td>
+                                    <td><a href="{% url 'user-edit' pk=user.id %}"><button type="button" class="btn btn-warning">Edit</button></a> <a href="{% url 'user-delete' pk=user.id %}"><button type="button" class="btn btn-danger" >Delete</button></a></td>
                                 </tr>
                                 
                             {% endfor %}
