@@ -161,9 +161,7 @@ def user_create_view(request):
             messages.success(request, 'User data created!')
             return redirect('dashboard')
         else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, error)
+            messages.error(request, form.errors)
     return render(request,'user_create.html',{'form': form})
 
 
@@ -189,9 +187,7 @@ def artist_create_view(request):
             messages.success(request, 'Artist data created!')
             return redirect('dashboard')
         else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, error)
+            messages.error(request, form.errors)
     return render(request,'artist_create.html',{'form': form})
 
 
@@ -226,9 +222,7 @@ def user_edit_view(request, pk):
                 messages.success(request, 'User data edited!')
                 return redirect('dashboard')
             else:
-                for field, errors in form.errors.items():
-                    for error in errors:
-                        messages.error(request, error)
+                messages.error(request, form.errors)
         else:
             messages.error(request, validate)
 
@@ -277,9 +271,7 @@ def artist_edit_view(request, pk):
             messages.success(request, 'Artist data edited!')
             return redirect('dashboard')
         else:
-            for field, errors in form.errors.items():
-                    for error in errors:
-                        messages.error(request, error)
+                messages.error(request, form.errors)
 
 
     form = {
@@ -341,9 +333,7 @@ def artist_music_create_view(request, pk):
             messages.success(request, 'Music data created!')
             return redirect(reverse('artist-music', kwargs={'pk': pk}))
         else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, error)
+             messages.error(request, form.errors)
     return render(request,'artist_music_create.html',{'form': form})
 
 
